@@ -1,0 +1,8 @@
+.mat-icon {
+    cursor: pointer;
+}
+
+.active {
+    background-color: #f44336;
+    color: white;
+}

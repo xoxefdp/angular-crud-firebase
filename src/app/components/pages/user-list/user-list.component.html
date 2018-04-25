@@ -1,0 +1,10 @@
+<mat-list>
+  <h3 mat-subheader>USERS</h3>
+  <mat-divider></mat-divider>
+  <mat-list-item *ngFor="let user of users">
+    <mat-icon mat-list-icon>person</mat-icon>
+    <p mat-line>{{user.first}}</p>
+    <p mat-line>{{user.last}}</p>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
