@@ -6,6 +6,9 @@
       [(ngModel)]="first"
       required
     >
+    <mat-error *ngIf="first==''">
+      Firstname is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
   <mat-form-field>
     <input matInput
@@ -14,6 +17,9 @@
       [(ngModel)]="last"
       required
     >
+    <mat-error *ngIf="last==''">
+      Lastname is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
   <button mat-raised-button type="submit">
     <mat-icon>add</mat-icon>

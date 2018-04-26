@@ -11,20 +11,28 @@ import {
   MatInputModule,
 } from '@angular/material';
 
+import { environment } from '../environments/environment';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 import { RoutingModule } from './modules/routing/routing.module';
+import { UserService } from './services/user.service';
 
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './components/common/nav-bar/nav-bar.component';
 import { UserAddComponent } from './components/pages/user-add/user-add.component';
 import { UserListComponent } from './components/pages/user-list/user-list.component';
-import { NavBarComponent } from './components/common/nav-bar/nav-bar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavBarComponent,
     UserAddComponent,
-    UserListComponent,
-    NavBarComponent
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +44,15 @@ import { NavBarComponent } from './components/common/nav-bar/nav-bar.component';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    RoutingModule
+    RoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule,
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [
+    AngularFirestore,
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

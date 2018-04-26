@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../../../services/user.service';
+import { User } from '../../../models/user';
 
 @Component({
   selector: 'app-user-add',
@@ -11,7 +13,7 @@ export class UserAddComponent implements OnInit {
   first: string;
   last: string;
 
-  constructor(private router: Router) {
+  constructor(private userService: UserService, private router: Router) {
     this.resetUser();
   }
 
@@ -26,8 +28,18 @@ export class UserAddComponent implements OnInit {
     this.last = '';
   }
 
+  createUser(user: User) {
+    this.userService.createUser(user);
+  }
+
   onSubmit() {
     if (this.first !== '' && this.last !== '' ) {
+      const user = {
+        first: this.first,
+        last: this.last
+      };
+
+      this.createUser(user);
       this.router.navigate(['/list']);
     }
   }

@@ -1,10 +1,15 @@
 <mat-list>
-  <h3 mat-subheader>USERS</h3>
+  <button mat-raised-button disabled>
+    <mat-icon>person</mat-icon>
+  </button>
   <mat-divider></mat-divider>
-  <mat-list-item *ngFor="let user of users">
+  <mat-list-item *ngFor="let user of usersObservable | async">
     <mat-icon mat-list-icon>person</mat-icon>
     <p mat-line>{{user.first}}</p>
     <p mat-line>{{user.last}}</p>
+    <button mat-raised-button color="warn" (click)="deleteUser(user?.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
     <mat-divider></mat-divider>
   </mat-list-item>
 </mat-list>
