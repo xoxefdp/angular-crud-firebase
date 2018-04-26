@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserAddComponent } from './../../components/pages/user-add/user-add.component';
 import { UserListComponent } from './../../components/pages/user-list/user-list.component';
 
-
+// routes for the SPA are declared here
 export const RoutesPath: Routes = [
   { path: '', redirectTo: 'add', pathMatch: 'full' },
   { path: 'add', component: UserAddComponent },

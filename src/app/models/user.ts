@@ -3,3 +3,4 @@ export class User {
     first: string;
     last: string;
 }
+// the user model

@@ -18,10 +18,13 @@ export class UserListComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
+  // lifecycle event called after component builds
+  // returns an observable containing users stored in firebase
   ngOnInit() {
     this.usersObservable = this.userService.getSnapshot();
   }
 
+  // calls user service to create a user
   deleteUser(id: string) {
     this.userService.deleteUser(id);
   }
