@@ -11,6 +11,11 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "author": "José Diaz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xoxefdp/angular-crud-firebase.git"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.0",
